@@ -6,40 +6,28 @@ using UnityEngine;
 public class TurnGameObjectOn : MonoBehaviour
 {
     [SerializeField]private Transform metalChild;
-    [SerializeField] private bool childIsActive = false;
-   // [SerializeField] private bool setActive;
+    [SerializeField]private bool childIsActive = false;
 
     private void Awake()
     {
         metalChild = transform.GetChild(0);
+        metalChild.gameObject.SetActive(false);
     }
-
-    private void Update()
-    {
-        /*
-        if (setActive)
-        {
-            metalChild.gameObject.SetActive(true);
-        }
-        else
-        {
-            metalChild.gameObject.SetActive(false);
-        }
-        */
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (!childIsActive)
+        if (other.gameObject.CompareTag("Player"))
         {
-            metalChild.gameObject.SetActive(true);
-            childIsActive = true;
+            if (!childIsActive)
+            {
+                metalChild.gameObject.SetActive(true);
+                childIsActive = true;
+            }
+            else
+            {
+                metalChild.gameObject.SetActive(false);
+                childIsActive = false;
+            }
         }
-        else
-        {
-            metalChild.gameObject.SetActive(false);
-            childIsActive = false;
-        }
-        
     }
 }

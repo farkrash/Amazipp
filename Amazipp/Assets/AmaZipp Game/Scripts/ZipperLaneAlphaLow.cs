@@ -9,7 +9,7 @@ public class ZipperLaneAlphaLow : MonoBehaviour
 
    private void Awake()
    {
-      alphaIsLow = true;
+       alphaIsLow = true;
    }
 
    private void OnTriggerExit(Collider other)

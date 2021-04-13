@@ -5,39 +5,50 @@ using UnityEngine;
 public class PlayerMovment : MonoBehaviour
 {
     [SerializeField] private Transform[] laneTransforms;
-    [SerializeField] private float speed;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float rotationSpeed;
     [SerializeField] private int currentPosOnLaneIndex;
-    private bool moveRight = false;
-    private bool moveLeft = false;
+    [SerializeField] private int nextPosOnLaneIndex;
+    [SerializeField] private bool moveRight = false;
+    [SerializeField] private bool moveLeft = false;
     private bool started = false;
     private bool calculatedPos = true;
 
     private void Start()
     {
         transform.position = laneTransforms[0].position;
+        transform.rotation = laneTransforms[0].rotation;
+        nextPosOnLaneIndex = 1;
     }
     private void Update()
     {
-        //DirectionInputs();
         MoveToCurrentIndexPoint();
+        DirectionInputs();
     }
 
     private void MoveToCurrentIndexPoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, laneTransforms[currentPosOnLaneIndex].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, laneTransforms[currentPosOnLaneIndex].position, moveSpeed * Time.deltaTime);
         if (transform.position == laneTransforms[currentPosOnLaneIndex].position)
         {
-            DirectionInputs();
+            //transform.rotation = laneTransforms[currentPosOnLaneIndex].rotation;
+            LerpRotation();
 
             if (moveLeft && currentPosOnLaneIndex + 1 <laneTransforms.Length)
             {
+                nextPosOnLaneIndex = currentPosOnLaneIndex + 1;
                 currentPosOnLaneIndex++;
                 moveLeft = false;
             }
-            if (moveRight && currentPosOnLaneIndex  > 0)
+            if (moveRight)
             {
-                currentPosOnLaneIndex--;
                 moveRight = false;
+                
+                if (currentPosOnLaneIndex  > 0)
+                {
+                    nextPosOnLaneIndex = currentPosOnLaneIndex - 1;
+                    currentPosOnLaneIndex--;
+                }
             }
         }
     }
@@ -46,12 +57,24 @@ public class PlayerMovment : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            
             moveLeft = true;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            
             moveRight = true;
         }
+    }
+
+    private void LerpRotation()
+    {
+        var currentRotation = transform.eulerAngles;
+        var waypointRotation = laneTransforms[nextPosOnLaneIndex].transform.eulerAngles;
+        currentRotation.y = Mathf.Lerp(currentRotation.y, waypointRotation.y,
+            Time.deltaTime * rotationSpeed);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, currentRotation.y, transform.eulerAngles.z);
+
     }
     /*
     private void Awake()

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ZipperLane
+  - StopPoint
   layers:
   - Default
   - TransparentFX

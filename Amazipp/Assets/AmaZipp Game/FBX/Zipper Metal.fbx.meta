@@ -3,7 +3,12 @@ guid: 7a26e587e2e8b1e4aba9421f6b4b9a12
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Zipper Metal
+    second: {fileID: 2100000, guid: 135763fee3e52374bb3489c6c2c198d8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

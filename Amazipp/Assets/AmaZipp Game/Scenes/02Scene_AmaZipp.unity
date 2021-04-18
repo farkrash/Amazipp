@@ -358,8 +358,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55903363, y: 0.44179773, z: 0.30589682}
-  m_Center: {x: -0.0056661367, y: -0.044919968, z: 0.07244807}
+  m_Size: {x: 0.37187454, y: 0.11183646, z: 0.5489195}
+  m_Center: {x: -0.0056656254, y: -0.057615936, z: 0.19772385}
 --- !u!4 &19870120
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +373,7 @@ Transform:
   m_Children:
   - {fileID: 8881390058493573540}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 33.844, z: 0}
 --- !u!114 &19870121
 MonoBehaviour:
@@ -437,17 +437,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f1bd4064758cb43ae54a170fa692a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laneTransforms:
-  - {fileID: 1003598710}
-  - {fileID: 752079838}
-  - {fileID: 1787378272}
-  - {fileID: 1217023716}
   moveSpeed: 5
-  rotationSpeed: 10
-  currentPosOnLaneIndex: 0
-  nextPosOnLaneIndex: 0
-  moveRight: 0
-  moveLeft: 0
+  rotationSpeed: 3
+  waypoints:
+  - {fileID: 1003598710}
+  - {fileID: 756192524}
+  - {fileID: 199617169}
+  - {fileID: 287211449}
+  - {fileID: 1037230378}
+  - {fileID: 1212020556}
+  - {fileID: 1081665935}
+  - {fileID: 1995910300}
+  - {fileID: 1912329215}
+  - {fileID: 340112717}
+  currentWaypointIndex: 0
 --- !u!1001 &60560287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1068,6 +1071,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 172385527}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &199617168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 199617169}
+  m_Layer: 0
+  m_Name: Waypoint 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199617169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199617168}
+  m_LocalRotation: {x: 0, y: 0.6184084, z: 0, w: 0.7858569}
+  m_LocalPosition: {x: 0.47, y: 0.156, z: 2.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 76.4, z: 0}
 --- !u!1001 &201278731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1268,6 +1301,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 262296755}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &287211448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 287211449}
+  m_Layer: 0
+  m_Name: Waypoint 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &287211449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287211448}
+  m_LocalRotation: {x: 0, y: 0.9997015, z: 0, w: 0.024432283}
+  m_LocalPosition: {x: 3.77, y: 0.156, z: 3.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 177.2, z: 0}
 --- !u!1001 &291260687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1574,6 +1637,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 336286675}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &340112716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340112717}
+  m_Layer: 0
+  m_Name: Waypoint 9
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &340112717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340112716}
+  m_LocalRotation: {x: -0, y: -0.2583977, z: 0, w: -0.96603864}
+  m_LocalPosition: {x: -3.98, y: 0.156, z: -1.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: -330.05, z: 0}
 --- !u!1001 &400136436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3524,7 +3617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &706558776
 GameObject:
@@ -3555,7 +3648,7 @@ Transform:
   m_Children:
   - {fileID: 719682550}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719682549
 GameObject:
@@ -3978,7 +4071,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 740606734}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &752079837
+--- !u!1 &756192523
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3986,42 +4079,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 752079838}
-  - component: {fileID: 752079839}
+  - component: {fileID: 756192524}
   m_Layer: 0
-  m_Name: WayPoint (1)
-  m_TagString: StopPoint
+  m_Name: Waypoint 1
+  m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &752079838
+--- !u!4 &756192524
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752079837}
-  m_LocalRotation: {x: 0, y: 0.8334038, z: 0, w: 0.5526646}
-  m_LocalPosition: {x: -1.14, y: 0.014, z: 3.09}
+  m_GameObject: {fileID: 756192523}
+  m_LocalRotation: {x: 0, y: 0.7983728, z: 0, w: 0.60216355}
+  m_LocalPosition: {x: -2.35, y: 0.156, z: 3.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 112.9, z: 0}
---- !u!65 &752079839
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752079837}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 105.95, z: 0}
 --- !u!1001 &759500215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4981,6 +5060,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 948341816}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &949629347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949629348}
+  m_Layer: 0
+  m_Name: == Waypoints ==
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &949629348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949629347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1003598710}
+  - {fileID: 756192524}
+  - {fileID: 199617169}
+  - {fileID: 287211449}
+  - {fileID: 1037230378}
+  - {fileID: 1212020556}
+  - {fileID: 1081665935}
+  - {fileID: 1995910300}
+  - {fileID: 1912329215}
+  - {fileID: 340112717}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &988782832
 PrefabInstance:
@@ -5283,10 +5402,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1003598710}
-  - component: {fileID: 1003598711}
   m_Layer: 0
-  m_Name: WayPoint
-  m_TagString: StopPoint
+  m_Name: Waypoint
+  m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5298,26 +5416,43 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003598709}
-  m_LocalRotation: {x: 0, y: 0.23259674, z: 0, w: 0.97257334}
-  m_LocalPosition: {x: -2.438, y: 0.014, z: 2.947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4, y: 0.156, z: 0.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 26.9, z: 0}
---- !u!65 &1003598711
-BoxCollider:
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1037230377
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003598709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1037230378}
+  m_Layer: 0
+  m_Name: Waypoint 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1037230378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037230377}
+  m_LocalRotation: {x: 0, y: 0.94776845, z: 0, w: 0.3189593}
+  m_LocalPosition: {x: 3.85, y: 0.156, z: 0.59}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 142.8, z: 0}
 --- !u!1001 &1055038212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5423,6 +5558,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1055038212}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1081665934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081665935}
+  m_Layer: 0
+  m_Name: Waypoint 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081665935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081665934}
+  m_LocalRotation: {x: 0, y: 0.95956004, z: -0, w: -0.28150412}
+  m_LocalPosition: {x: 2.72, y: 0.156, z: -2.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 212.7, z: 0}
 --- !u!1001 &1096515756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6233,6 +6398,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1178435599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1212020555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212020556}
+  m_Layer: 0
+  m_Name: Waypoint 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212020556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212020555}
+  m_LocalRotation: {x: 0, y: 0.81512785, z: -0, w: -0.5792812}
+  m_LocalPosition: {x: 5.57, y: 0.156, z: -1.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 250.8, z: 0}
 --- !u!1001 &1215085374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6333,50 +6528,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1215085374}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1217023715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1217023716}
-  - component: {fileID: 1217023717}
-  m_Layer: 0
-  m_Name: WayPoint (3)
-  m_TagString: StopPoint
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1217023716
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217023715}
-  m_LocalRotation: {x: 0, y: 0.99978435, z: 0, w: 0.020768013}
-  m_LocalPosition: {x: 3.72, y: 0.014, z: 3.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 177.62, z: 0}
---- !u!65 &1217023717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217023715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1247175582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6969,7 +7120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1390147648
 GameObject:
@@ -7063,55 +7214,8 @@ Transform:
   m_LocalScale: {x: 2.549, y: 2.549, z: 2.549}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1391414513
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1391414515}
-  - component: {fileID: 1391414514}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!54 &1391414514
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391414513}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!4 &1391414515
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391414513}
-  m_LocalRotation: {x: -0.38052902, y: -0, z: -0, w: 0.92476904}
-  m_LocalPosition: {x: 0, y: 0.344, z: -0.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -44.733, y: 0, z: 0}
 --- !u!1001 &1395413768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10322,50 +10426,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1770353335}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1787378271
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1787378272}
-  - component: {fileID: 1787378273}
-  m_Layer: 0
-  m_Name: WayPoint (2)
-  m_TagString: StopPoint
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1787378272
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787378271}
-  m_LocalRotation: {x: 0, y: 0.5321376, z: 0, w: 0.84665793}
-  m_LocalPosition: {x: 0.84, y: 0.014, z: 2.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 64.3, z: 0}
---- !u!65 &1787378273
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787378271}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1798445655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11007,6 +11067,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1895380714}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912329214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912329215}
+  m_Layer: 0
+  m_Name: Waypoint 8
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912329215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912329214}
+  m_LocalRotation: {x: 0, y: -0.60529405, z: 0, w: 0.79600203}
+  m_LocalPosition: {x: -1.42, y: 0.156, z: -2.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: -74.5, z: 0}
 --- !u!1001 &1925964735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11212,6 +11302,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1959699652}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1995910299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995910300}
+  m_Layer: 0
+  m_Name: Waypoint 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995910300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995910299}
+  m_LocalRotation: {x: 0, y: 0.32309178, z: -0, w: -0.9463677}
+  m_LocalPosition: {x: 0.53, y: 0.156, z: -5.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949629348}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 322.3, z: 0}
 --- !u!1001 &2021264607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11897,6 +12017,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &62684204393945983
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12180,6 +12302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &222615054804314791
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12252,6 +12376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &256538020163267867
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12354,6 +12480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &301091980604925063
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12573,6 +12701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &398613321247035507
 GameObject:
   m_ObjectHideFlags: 0
@@ -12606,6 +12736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &407979961775036720
 GameObject:
   m_ObjectHideFlags: 0
@@ -12639,6 +12771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &435987907557145290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12819,6 +12953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &520550322042894764
 Transform:
   m_ObjectHideFlags: 0
@@ -12866,6 +13002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &537831913903110745
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12921,6 +13059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &600157453996423185
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12970,6 +13110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &630031596418867234
 GameObject:
   m_ObjectHideFlags: 0
@@ -13003,6 +13145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &643613758939505080
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13044,6 +13188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &653299802225233103
 Transform:
   m_ObjectHideFlags: 0
@@ -13177,6 +13323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &801539258974307312
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13279,6 +13427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &850834405663464448
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13334,6 +13484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &924276043939322266
 Transform:
   m_ObjectHideFlags: 0
@@ -13381,6 +13533,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &979257153798851981
 GameObject:
   m_ObjectHideFlags: 0
@@ -13414,6 +13568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &993014828304612128
 GameObject:
   m_ObjectHideFlags: 0
@@ -13447,6 +13603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &996306850560756726
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13558,6 +13716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1062669714002107429
 GameObject:
   m_ObjectHideFlags: 0
@@ -13591,6 +13751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1070331373976118372
 GameObject:
   m_ObjectHideFlags: 0
@@ -13624,6 +13786,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &1081188655769834979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13735,6 +13899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &1121510626356819077
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13798,6 +13964,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1167754468520740062
 Transform:
   m_ObjectHideFlags: 0
@@ -13892,6 +14060,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &1254095320160697364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13964,6 +14134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &1259521718992373999
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14174,6 +14346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &1374894000819049087
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14246,6 +14420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1385258497639436646
 GameObject:
   m_ObjectHideFlags: 0
@@ -14279,6 +14455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &1437719826646308800
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14401,6 +14579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1505213168026183369
 GameObject:
   m_ObjectHideFlags: 0
@@ -14434,6 +14614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1512334506686354034
 GameObject:
   m_ObjectHideFlags: 0
@@ -14467,6 +14649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1518501435529657301
 Transform:
   m_ObjectHideFlags: 0
@@ -14514,6 +14698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1529442243895679772
 Transform:
   m_ObjectHideFlags: 0
@@ -14575,6 +14761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1549770563012373264
 Transform:
   m_ObjectHideFlags: 0
@@ -14691,6 +14879,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1639260643386313697
 GameObject:
   m_ObjectHideFlags: 0
@@ -14724,6 +14914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1639357516614179273
 Transform:
   m_ObjectHideFlags: 0
@@ -14893,6 +15085,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &1711813855161211289
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15073,6 +15267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1815153531018902096
 GameObject:
   m_ObjectHideFlags: 0
@@ -15106,6 +15302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1850427405291275419
 GameObject:
   m_ObjectHideFlags: 0
@@ -15139,6 +15337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &1912833766919398728
 GameObject:
   m_ObjectHideFlags: 0
@@ -15172,6 +15372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1919293562995715674
 Transform:
   m_ObjectHideFlags: 0
@@ -15335,6 +15537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &1995532874861779707
 Transform:
   m_ObjectHideFlags: 0
@@ -15396,6 +15600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &2082148660796140941
 Transform:
   m_ObjectHideFlags: 0
@@ -15443,6 +15649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &2086862008284887946
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15559,6 +15767,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &2206202875575083322
 Transform:
   m_ObjectHideFlags: 0
@@ -15642,6 +15852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &2294163756768551838
 Transform:
   m_ObjectHideFlags: 0
@@ -15736,6 +15948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &2387448035674604893
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15960,6 +16174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &2554661984394937525
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16009,6 +16225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &2610207519141622396
 Transform:
   m_ObjectHideFlags: 0
@@ -16103,6 +16321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &2666340277071672172
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16230,20 +16450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
---- !u!4 &2762509546783931984
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3250956161089676522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9911735, y: -1.9769132e-17, z: 0.89032257}
-  m_LocalScale: {x: 0.71342, y: 1, z: 0.4341556}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &2791764244608138397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16313,6 +16521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &2901003163236996242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16588,6 +16798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &3063507423651074611
 GameObject:
   m_ObjectHideFlags: 0
@@ -16621,6 +16833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &3065077771514169708
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16728,6 +16942,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &3204472463263056636
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16752,22 +16968,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7798175064409751788}
   m_Mesh: {fileID: 3894632324752072272, guid: 34df78c3972bf804782204528efbce44, type: 3}
---- !u!1 &3250956161089676522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2762509546783931984}
-  m_Layer: 0
-  m_Name: Zipper Metal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!33 &3252972675175677823
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16981,6 +17181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &3396994092265192751
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17131,6 +17333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &3422042114698800036
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17307,6 +17511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &3534496839950123927
 GameObject:
   m_ObjectHideFlags: 0
@@ -17340,6 +17546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &3548994072261903748
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17412,6 +17620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &3561281240991706936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17484,6 +17694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &3600265566517762428
 GameObject:
   m_ObjectHideFlags: 0
@@ -17517,6 +17729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &3614438769650515260
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17681,6 +17895,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &3684895064863881233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17911,6 +18127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &3843045213661741643
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17968,6 +18186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &3884269149888327115
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18125,6 +18345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &3955481521079384383
 Transform:
   m_ObjectHideFlags: 0
@@ -18172,6 +18394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1001 &3995422392454893886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18287,6 +18511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &4036383352268352943
 Transform:
   m_ObjectHideFlags: 0
@@ -18409,6 +18635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &4082273006277702689
 GameObject:
   m_ObjectHideFlags: 0
@@ -18442,6 +18670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &4085307680581578694
 GameObject:
   m_ObjectHideFlags: 0
@@ -18475,6 +18705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4092139225361189684
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18599,6 +18831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4246384204536978799
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18718,6 +18952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &4297577197237577646
 Transform:
   m_ObjectHideFlags: 0
@@ -18781,6 +19017,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4339544974922104958
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18853,6 +19091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &4358056221896916377
 GameObject:
   m_ObjectHideFlags: 0
@@ -18886,6 +19126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4359448104267448575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19050,6 +19292,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &4408396980378174729
 GameObject:
   m_ObjectHideFlags: 0
@@ -19083,6 +19327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &4413042761709304947
 Transform:
   m_ObjectHideFlags: 0
@@ -19144,6 +19390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &4437441735998283913
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19215,6 +19463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &4594085045422497441
 GameObject:
   m_ObjectHideFlags: 0
@@ -19248,6 +19498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4599212624336392567
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19328,6 +19580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &4627400922394862701
 GameObject:
   m_ObjectHideFlags: 0
@@ -19361,6 +19615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4638624131093476528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19616,6 +19872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4741092605186154830
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19688,6 +19946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &4817718240210036386
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19751,6 +20011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &4919244168776478058
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19806,6 +20068,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &4981660475326416110
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19892,6 +20156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &5007886783978099214
 GameObject:
   m_ObjectHideFlags: 0
@@ -19925,6 +20191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &5054084916688116759
 GameObject:
   m_ObjectHideFlags: 0
@@ -19958,6 +20226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &5068237790922229574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20136,6 +20406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &5178431113668528834
 GameObject:
   m_ObjectHideFlags: 0
@@ -20169,6 +20441,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5182251543474571849
 Transform:
   m_ObjectHideFlags: 0
@@ -20244,6 +20518,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5210245062611442376
 Transform:
   m_ObjectHideFlags: 0
@@ -20372,6 +20648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5308976777746553656
 Transform:
   m_ObjectHideFlags: 0
@@ -20551,6 +20829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &5392292527240737021
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20592,6 +20872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &5421920390859588143
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20700,6 +20982,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5487705085905671696
 Transform:
   m_ObjectHideFlags: 0
@@ -20755,6 +21039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5542633641118731425
 Transform:
   m_ObjectHideFlags: 0
@@ -20869,6 +21155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &5580685470765302882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20941,6 +21229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &5607914742293893019
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21060,6 +21350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &5672187490162167677
 GameObject:
   m_ObjectHideFlags: 0
@@ -21093,6 +21385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5705899890984631360
 Transform:
   m_ObjectHideFlags: 0
@@ -21373,6 +21667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &5818006345743859090
 Transform:
   m_ObjectHideFlags: 0
@@ -21495,6 +21791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &5959506337918829028
 GameObject:
   m_ObjectHideFlags: 0
@@ -21528,6 +21826,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &6023648331882404208
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21754,6 +22054,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &6213243200031267746
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21887,6 +22189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &6273277157032686002
 GameObject:
   m_ObjectHideFlags: 0
@@ -21920,6 +22224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &6290884189443534297
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22000,6 +22306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &6358586190891358964
 Transform:
   m_ObjectHideFlags: 0
@@ -22122,6 +22430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &6490424961463374877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22330,6 +22640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &6675194882832451101
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22518,6 +22830,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &6743954483674771762
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22581,6 +22895,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &6837069202180712466
 GameObject:
   m_ObjectHideFlags: 0
@@ -22614,6 +22930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &6839572241798641175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23000,6 +23318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &7027282400076813502
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23292,6 +23612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &7160098853810920363
 GameObject:
   m_ObjectHideFlags: 0
@@ -23325,6 +23647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &7169430234673614680
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23397,6 +23721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &7181246930640576806
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23802,6 +24128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &7409064674757604444
 Transform:
   m_ObjectHideFlags: 0
@@ -23904,6 +24232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &7493640856340434592
 Transform:
   m_ObjectHideFlags: 0
@@ -23965,6 +24295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &7521058795635817463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24112,6 +24444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &7581314842418462908
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24153,6 +24487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &7591473158954357382
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24202,6 +24538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &7653915531057734336
 Transform:
   m_ObjectHideFlags: 0
@@ -24324,6 +24662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &7697271214957644516
 Transform:
   m_ObjectHideFlags: 0
@@ -24379,6 +24719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &7728442650279693365
 GameObject:
   m_ObjectHideFlags: 0
@@ -24412,6 +24754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &7732104302516439234
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24559,6 +24903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &7815124845317789303
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24678,6 +25024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &7889077595839017884
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24719,6 +25067,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &7914822680620807169
 GameObject:
   m_ObjectHideFlags: 0
@@ -24752,6 +25102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &7929728120786266769
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24821,6 +25173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &7962990915695590918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24940,6 +25294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &8059686580239820081
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25059,6 +25415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &8166403830602183977
 GameObject:
   m_ObjectHideFlags: 0
@@ -25092,6 +25450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &8168482082875038310
 Transform:
   m_ObjectHideFlags: 0
@@ -25508,6 +25868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &8307140328147428697
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25672,6 +26034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &8417211452381756326
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25744,6 +26108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &8422911503173963437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25830,6 +26196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &8430690238734920248
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25885,6 +26253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &8484964373891584514
 GameObject:
   m_ObjectHideFlags: 0
@@ -25918,6 +26288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &8501675890484867466
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26029,6 +26401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &8562602585100643611
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26070,6 +26444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &8605261123399918367
 GameObject:
   m_ObjectHideFlags: 0
@@ -26103,6 +26479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &8614501797461732970
 Transform:
   m_ObjectHideFlags: 0
@@ -26164,6 +26542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &8629872524564829803
 GameObject:
   m_ObjectHideFlags: 0
@@ -26197,6 +26577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &8637135445009760698
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26238,6 +26620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &8694865380759435225
 Transform:
   m_ObjectHideFlags: 0
@@ -26299,6 +26683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &8724781245212019614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26371,6 +26757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &8745542505699144214
 GameObject:
   m_ObjectHideFlags: 0
@@ -26404,6 +26792,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &8789470824838104623
 GameObject:
   m_ObjectHideFlags: 0
@@ -26437,6 +26827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &8815802686321275856
 Transform:
   m_ObjectHideFlags: 0
@@ -26681,6 +27073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &8957707589787822820
 Transform:
   m_ObjectHideFlags: 0
@@ -26775,6 +27169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &8986526005700272466
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26847,6 +27243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &9031340622420425523
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26919,6 +27317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!33 &9068128356716061326
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26960,6 +27360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &9069510162290497129
 GameObject:
   m_ObjectHideFlags: 0
@@ -26993,6 +27395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!1 &9070309555550818385
 GameObject:
   m_ObjectHideFlags: 0
@@ -27026,6 +27430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &9077604160172838702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27098,6 +27504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!4 &9096367624617439734
 Transform:
   m_ObjectHideFlags: 0
@@ -27228,6 +27636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 1
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!23 &9196734048538364515
 MeshRenderer:
   m_ObjectHideFlags: 0

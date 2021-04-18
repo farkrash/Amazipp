@@ -8,26 +8,46 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject otherGameObject;
     [SerializeField] private Color lowAlphaColor;
     [SerializeField] private Color highAlphaColor;
-
-    private void OnTriggerStay(Collider other)
+    
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "ZipperLane" && other.gameObject.GetComponent<Renderer>() != null)
+        if (other.gameObject.tag == "ZipperLane")
         {
             otherGameObject = other.gameObject;
             var zipperAlphaScript = otherGameObject.GetComponent<ZipperLaneAlphaLow>();
-            var renderer = other.GetComponent<Renderer>();
-            Material material = renderer.material;
-            Color color = material.color;
             
-                if (zipperAlphaScript.alphaIsLow)
-                {
-                    material.color = highAlphaColor;
-                }
-                else if (!zipperAlphaScript.alphaIsLow)
-                {
-                    material.color = lowAlphaColor;
-                }
+            if (zipperAlphaScript.alphaIsLow)
+            {
+                zipperAlphaScript.alphaIsLow = false;
+            }
+            else
+            {
+                zipperAlphaScript.alphaIsLow = true;
+            }
         }
     }
- 
+    
+    /*
+   private void OnTriggerEnter(Collider other)
+   {
+       if (other.gameObject.tag == "ZipperLane" && other.gameObject.GetComponent<Renderer>() != null)
+       {
+           otherGameObject = other.gameObject;
+           var zipperAlphaScript = otherGameObject.GetComponent<ZipperLaneAlphaLow>();
+           var renderer = other.GetComponent<Renderer>();
+           Material material = renderer.material;
+           Color color = material.color;
+           
+               if (zipperAlphaScript.alphaIsLow)
+               {
+                   material.color = highAlphaColor;
+               }
+               else if (!zipperAlphaScript.alphaIsLow)
+               {
+                   material.color = lowAlphaColor;
+               }
+       }
+   }
+   */
+    
 }

@@ -6,24 +6,58 @@ using UnityEngine;
 public class ZipperLaneAlphaLow : MonoBehaviour
 {
    public bool alphaIsLow = true;
+   [SerializeField] private Color lowAlphaColor;
+   [SerializeField] private Color highAlphaColor;
+   private Renderer myRenderer;
 
    private void Awake()
    {
        alphaIsLow = true;
+       myRenderer = GetComponent<Renderer>();
    }
 
+   private void Update()
+   {
+      ChangeAlpha();
+   }
+   
+   private void ChangeAlpha()
+   {
+      if (alphaIsLow)
+      {
+         Material material = myRenderer.material;
+         Color color = material.color;
+         material.color = lowAlphaColor;
+      }
+      else
+      {
+         Material material = myRenderer.material;
+         Color color = material.color;
+         material.color = highAlphaColor;
+      }
+   }
+
+   /*
    private void OnTriggerExit(Collider other)
    {
       if (other.gameObject.CompareTag("Player"))
       {
          if (alphaIsLow)
          {
-            alphaIsLow = false;
+            Material material = myRenderer.material;
+            Color color = material.color;
+            material.color = lowAlphaColor;
          }
          else
          {
-            alphaIsLow = true;
+            Material material = myRenderer.material;
+            Color color = material.color;
+            material.color = highAlphaColor;
          }
       }
    }
+   */
+
+   
+   
 }

@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ZipperLaneAlphaLow : MonoBehaviour
 {
-   public bool alphaIsLow = true;
+   public bool alphaIsLow = false;
    [SerializeField] private Color lowAlphaColor;
    [SerializeField] private Color highAlphaColor;
    private Renderer myRenderer;
 
    private void Awake()
    {
-       alphaIsLow = true;
+       alphaIsLow = false;
        myRenderer = GetComponent<Renderer>();
    }
 

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Color lowAlphaColor;
     [SerializeField] private Color highAlphaColor;
     
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "ZipperLane")
         {

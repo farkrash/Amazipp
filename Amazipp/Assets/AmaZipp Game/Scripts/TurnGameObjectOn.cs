@@ -6,12 +6,12 @@ using UnityEngine;
 public class TurnGameObjectOn : MonoBehaviour
 {
     [SerializeField]private Transform metalChild;
-    [SerializeField]private bool childIsActive = false;
+    [SerializeField]private bool childIsActive = true;
 
     private void Awake()
     {
         metalChild = transform.GetChild(0);
-        metalChild.gameObject.SetActive(false);
+        metalChild.gameObject.SetActive(true);
     }
     
     private void OnTriggerEnter(Collider other)

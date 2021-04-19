@@ -6,27 +6,49 @@ using UnityEngine;
 public class TurnGameObjectOn : MonoBehaviour
 {
     [SerializeField]private Transform metalChild;
-    [SerializeField]private bool childIsActive = true;
-
+    [SerializeField]private bool isOpen = true;
+    [SerializeField] private Animator animator;
     private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
         metalChild = transform.GetChild(0);
         metalChild.gameObject.SetActive(true);
     }
-    
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (!childIsActive)
+            if (!isOpen)
             {
-                metalChild.gameObject.SetActive(true);
-                childIsActive = true;
+                //metalChild.gameObject.SetActive(true);
+                animator.SetBool("Open", true);
+                isOpen = true;
             }
             else
             {
-                metalChild.gameObject.SetActive(false);
-                childIsActive = false;
+                //metalChild.gameObject.SetActive(false);
+                animator.SetBool("Open", false);
+                isOpen = false;
+            }
+        }
+    }
+    */
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (!isOpen)
+            {
+                //metalChild.gameObject.SetActive(true);
+                animator.SetBool("Open", true);
+                isOpen = true;
+            }
+            else
+            {
+                //metalChild.gameObject.SetActive(false);
+                animator.SetBool("Open", false);
+                isOpen = false;
             }
         }
     }

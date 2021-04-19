@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalChild: {fileID: 0}
-  childIsActive: 1
+  isOpen: 0
+  animator: {fileID: 0}
 --- !u!65 &5289437747108445496
 BoxCollider:
   m_ObjectHideFlags: 0

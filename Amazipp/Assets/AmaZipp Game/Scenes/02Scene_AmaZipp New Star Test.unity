@@ -19261,12 +19261,27 @@ PrefabInstance:
     - target: {fileID: 3192265124164927037, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 33.9
+      value: 358.301
       objectReference: {fileID: 0}
     - target: {fileID: 3192265124164927037, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694132114456841686, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.006782697
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694132114456841686, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694132114456841686, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.046600945
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f, type: 3}
@@ -22128,6 +22143,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -3575066038149117894, guid: 9e94e710a9c60154bac7ccebdb0fd9bc, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 1957277775850811003, guid: 9e94e710a9c60154bac7ccebdb0fd9bc, type: 2}
+    value: {fileID: 1972888643}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1286749349
@@ -23913,7 +23930,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9339623, g: 0.9251312, b: 0.69166076, a: 1}
   m_Intensity: 20
   m_Range: 10
   m_SpotAngle: 30
@@ -29901,6 +29918,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6800f7102583ff941b25c2f4698af217, type: 3}
+--- !u!95 &1972888643 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3192265124164927038, guid: 4a4f81e73eb63fb4c83bca96e5b82c1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1029656846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1983490486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8331538171667930089, guid: b0d63668ff6e47349b9cd7e9b1639f33,

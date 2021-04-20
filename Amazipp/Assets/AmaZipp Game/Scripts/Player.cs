@@ -9,12 +9,17 @@ public class Player : MonoBehaviour
     [SerializeField] private Color lowAlphaColor;
     [SerializeField] private Color highAlphaColor;
     
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "ZipperLane")
         {
+            
             otherGameObject = other.gameObject;
             var zipperAlphaScript = otherGameObject.GetComponent<ZipperLaneAlphaLow>();
+
+            zipperAlphaScript.timesEntered++;
             
             if (zipperAlphaScript.alphaIsLow)
             {
@@ -26,7 +31,30 @@ public class Player : MonoBehaviour
             }
         }
     }
-    
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "ZipperLane")
+        {
+            otherGameObject = other.gameObject;
+            var zipperAlphaScript = otherGameObject.GetComponent<ZipperLaneAlphaLow>();
+            
+            if (zipperAlphaScript.isCornerTile && zipperAlphaScript.timesEntered == zipperAlphaScript.requiredTimeForChange)
+            {
+                if (zipperAlphaScript.alphaIsLow)
+                {
+                    zipperAlphaScript.alphaIsLow = false;
+                }
+                else
+                {
+                    zipperAlphaScript.alphaIsLow = true;
+                }
+            }
+            
+        }
+    }
+
     /*
    private void OnTriggerEnter(Collider other)
    {

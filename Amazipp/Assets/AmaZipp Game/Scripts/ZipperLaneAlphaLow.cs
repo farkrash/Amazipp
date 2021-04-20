@@ -6,6 +6,9 @@ using UnityEngine;
 public class ZipperLaneAlphaLow : MonoBehaviour
 {
    public bool alphaIsLow = false;
+   public bool isCornerTile;
+   public int timesEntered = 0;
+   public int requiredTimeForChange = 2;
    [SerializeField] private Color lowAlphaColor;
    [SerializeField] private Color highAlphaColor;
    private Renderer myRenderer;

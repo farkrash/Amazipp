@@ -48,6 +48,9 @@ MonoBehaviour:
   metalChild: {fileID: 0}
   isOpen: 0
   animator: {fileID: 0}
+  timesEnterd: 0
+  requiredTimesEnterd: 2
+  needsTimeEnetrd: 0
 --- !u!65 &5289437747108445496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ea4ab3f01a1f0e44bc6e01970a9ab73, type: 2}
+  - {fileID: 2100000, guid: 0b536bb64e076c34482a8bf19fc7f9c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

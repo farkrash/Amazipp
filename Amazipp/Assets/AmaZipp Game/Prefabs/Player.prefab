@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3192265124164927027}
-  m_LocalRotation: {x: 0, y: 0.58428735, z: 0, w: -0.81154686}
+  m_LocalRotation: {x: 0, y: 0.5842852, z: -0, w: -0.8115485}
   m_LocalPosition: {x: 0.06, y: 1.079, z: 2.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6272455469745911345}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 359.9653, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 288.495, z: 0}
 --- !u!65 &3192265124164927026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherGameObject: {fileID: 0}
-  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.2}
+  lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0.050980393}
   highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!54 &3192265124164927039
 Rigidbody:
@@ -124,6 +124,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3192265124164927037}
     m_Modifications:
+    - target: {fileID: 4945475703460165656, guid: f9b87f6292d117642b60769d9ab42873,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b536bb64e076c34482a8bf19fc7f9c2, type: 2}
     - target: {fileID: 6118974827556406135, guid: f9b87f6292d117642b60769d9ab42873,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -162,23 +167,28 @@ PrefabInstance:
     - target: {fileID: 6118974827556406135, guid: f9b87f6292d117642b60769d9ab42873,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.6010001
+      value: 358.6694
       objectReference: {fileID: 0}
     - target: {fileID: 6118974827556406135, guid: f9b87f6292d117642b60769d9ab42873,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 1.3000001
+      value: 0.0000001393686
       objectReference: {fileID: 0}
     - target: {fileID: 6118974827556406135, guid: f9b87f6292d117642b60769d9ab42873,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.66700006
+      value: -0.00000005302886
       objectReference: {fileID: 0}
     - target: {fileID: 7597052169674256594, guid: f9b87f6292d117642b60769d9ab42873,
         type: 3}
       propertyPath: m_Name
       value: Zipper Metal Hinge
       objectReference: {fileID: 0}
+    - target: {fileID: 8753030541837440956, guid: f9b87f6292d117642b60769d9ab42873,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b536bb64e076c34482a8bf19fc7f9c2, type: 2}
     - target: {fileID: 8881390058777852048, guid: f9b87f6292d117642b60769d9ab42873,
         type: 3}
       propertyPath: m_RootOrder
@@ -249,6 +259,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9163984029395165805, guid: f9b87f6292d117642b60769d9ab42873,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b536bb64e076c34482a8bf19fc7f9c2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9b87f6292d117642b60769d9ab42873, type: 3}
 --- !u!4 &6272455469745911345 stripped

@@ -36753,6 +36753,8 @@ PlayableDirector:
     value: {fileID: 2066682838}
   - key: {fileID: -3192130944814707899, guid: 9e94e710a9c60154bac7ccebdb0fd9bc, type: 2}
     value: {fileID: 669936552}
+  - key: {fileID: 8104008099936990678, guid: 9e94e710a9c60154bac7ccebdb0fd9bc, type: 2}
+    value: {fileID: 5814402247490035924}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1286749349
@@ -58857,7 +58859,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3166559652507899396}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 358.6694, y: 0.0000001393686, z: -0.00000005302886}
+  m_LocalEulerAnglesHint: {x: 359.6936, y: 0.003781357, z: 359.993}
 --- !u!1 &331093185719229970
 GameObject:
   m_ObjectHideFlags: 0
@@ -59276,9 +59278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 0
-  isCornerTile: 0
+  isCornerTile: 1
   timesEntered: 0
-  requiredTimeForChange: 2
+  requiredTimeForChange: 1
   lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0}
   highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!65 &585889889896359716
@@ -73489,9 +73491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaIsLow: 0
-  isCornerTile: 0
+  isCornerTile: 1
   timesEntered: 0
-  requiredTimeForChange: 2
+  requiredTimeForChange: 1
   lowAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 0}
   highAlphaColor: {r: 0.09411765, g: 0.09019608, b: 0.08627451, a: 1}
 --- !u!65 &7844927501465965528

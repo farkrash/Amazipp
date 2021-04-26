@@ -11,7 +11,7 @@ public class TurnGameObjectOn : MonoBehaviour
     [SerializeField] private int timesEnterd = 0;
     [SerializeField] private int requiredTimesEnterd = 2;
     [SerializeField] private bool needsTimeEnetrd;
-    private void Awake()
+    private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         metalChild = transform.GetChild(0);

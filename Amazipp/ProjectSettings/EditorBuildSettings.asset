@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AmaZipp Game/Scenes/02Scene_AmaZipp New Star Test.unity
+    guid: 23bb6c6a99865b943a71ec6d4c9bcb07
   m_configObjects: {}

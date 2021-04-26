@@ -13,7 +13,7 @@ public class ZipperLaneAlphaLow : MonoBehaviour
    [SerializeField] private Color highAlphaColor;
    private Renderer myRenderer;
 
-   private void Awake()
+   private void Start()
    {
        alphaIsLow = false;
        myRenderer = GetComponent<Renderer>();
@@ -40,26 +40,7 @@ public class ZipperLaneAlphaLow : MonoBehaviour
       }
    }
 
-   /*
-   private void OnTriggerExit(Collider other)
-   {
-      if (other.gameObject.CompareTag("Player"))
-      {
-         if (alphaIsLow)
-         {
-            Material material = myRenderer.material;
-            Color color = material.color;
-            material.color = lowAlphaColor;
-         }
-         else
-         {
-            Material material = myRenderer.material;
-            Color color = material.color;
-            material.color = highAlphaColor;
-         }
-      }
-   }
-   */
+  
 
    
    

@@ -169,7 +169,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
   buildNumber: {}
-  AndroidBundleVersionCode: 7
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -247,7 +247,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/EdenA/OneDrive/Documents/Shenkar/Unity/Keystore/RewardCircuitGamesKeystore.keystore
+  AndroidKeystoreName: '{dedicated}: Downloads/RewardCircuitGamesKeystore.keystore'
   AndroidKeyaliasName: reward circuit games
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -618,8 +618,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    4: TTP_CRASHTOOL;TTP_REWARDED_INTERSTITIALS;TTP_REWARDED_ADS;TTP_RATEUS;TTP_PRIVACY_SETTINGS;TTP_POPUPMGR;TTP_OPENADS;TTP_INTERSTITIALS;TTP_GAMEPROGRESSION;TTP_BANNERS;TTP_APPSFLYER
-    7: TTP_CRASHTOOL;TTP_REWARDED_INTERSTITIALS;TTP_REWARDED_ADS;TTP_RATEUS;TTP_PRIVACY_SETTINGS;TTP_POPUPMGR;TTP_OPENADS;TTP_INTERSTITIALS;TTP_GAMEPROGRESSION;TTP_BANNERS;TTP_APPSFLYER
+    4: TTP_CRASHTOOL;TTP_REWARDED_INTERSTITIALS;TTP_REWARDED_ADS;TTP_RATEUS;TTP_PRIVACY_SETTINGS;TTP_POPUPMGR;TTP_OPENADS;TTP_INTERSTITIALS;TTP_GAMEPROGRESSION;TTP_BANNERS;TTP_APPSFLYER;TTP_ANALYTICS
+    7: TTP_CRASHTOOL;TTP_REWARDED_INTERSTITIALS;TTP_REWARDED_ADS;TTP_RATEUS;TTP_PRIVACY_SETTINGS;TTP_POPUPMGR;TTP_OPENADS;TTP_INTERSTITIALS;TTP_GAMEPROGRESSION;TTP_BANNERS;TTP_APPSFLYER;TTP_ANALYTICS
   platformArchitecture: {}
   scriptingBackend:
     Android: 1

@@ -54,6 +54,8 @@ namespace Tabtale.TTPlugins
         /// string decisionPoint </summary>
         public static event System.Action<string> OnDismissImageMessage;
 
+        public static event System.Action<string, IDictionary<string,object>> OnDDNALogEvent;
+
         /// <summary> Called when the image engagement calls a custom action (see action value) </summary>
         /// <typeparam name="decisionPoint"> decision point name identifier </typeparam>
         /// <typeparam name="actionValue"> actionValue is a string that is configured in DDNA dashboard, and can describe anything the game wants to do as a
@@ -70,6 +72,8 @@ namespace Tabtale.TTPlugins
         private static GetUserScoreDelegate _getUserScoreDelegate;
 
         private static Dictionary<string, object> _overrideConfig;
+
+        private static Action<string> _getGeoCallback;
 
         /// <summary> (Firebase) Sync method, Gets a value as string from key, from the configuration (remote config - firebase).
         ///  Do not call this method before you received #OnRemoteFetchCompletedEvent </summary>
@@ -213,10 +217,6 @@ namespace Tabtale.TTPlugins
         {
             Debug.Log("TTPAnalytics::CallDecisionPoint:decisionPoint=" + decisionPoint);
             _onDecisionPointResponseAction = onDecisionPointResponseAction;
-#if !CRAZY_LABS_CLIK && DDNA_INCLUDED
-            TTPDeltaDnaAgent.CallDecisionPoint(decisionPoint, parameters, timeout);
-            return true;
-#else
             Debug.LogWarning("TTPAnalytics::CallDecisionPoint: could not find class TTPDeltaDnaAgent");
             System.Reflection.MethodInfo method = typeof(TTPCore).GetMethod("GetTTPGameObject", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
             if (method != null)
@@ -233,7 +233,28 @@ namespace Tabtale.TTPlugins
                 Debug.LogWarning("TTPAnalytics::CallDecisionPoint: could not find method GetTTPGameObject");
             }
             return false;
-#endif
+        }
+
+        public static void GetGeoCodeWhenReady(Action<string> callback)
+        {
+            _getGeoCallback = callback;
+            if (Impl != null)
+            {
+                Impl.GetGeo();
+            }
+        }
+
+        public static Dictionary<string, object> GetAdditionalParams()
+        {
+            if (Impl != null)
+            {
+                var str = Impl.GetAdditionalParams();
+                if (str != null)
+                {
+                    return TTPJson.Deserialize(str) as Dictionary<string, object>;
+                }
+            }
+            return null;
         }
 
 
@@ -244,11 +265,7 @@ namespace Tabtale.TTPlugins
         public static bool ShowImageMessage(string decisionPoint)
         {
             Debug.Log("TTPAnalytics::ShowImageMessage:decisionPoint=" + decisionPoint);
-#if CRAZY_LABS_CLIK || !DDNA_INCLUDED
-                return false;
-#else 
-                return TTPDeltaDnaAgent.ShowImageMessage(decisionPoint);
-#endif
+            return false;
         }
 
         private static IEnumerator CallDecisionPointResponseAction(string decisionPoint)
@@ -607,6 +624,8 @@ namespace Tabtale.TTPlugins
             string GetFirebaseInstanceId();
             string GetCurrentConfig();
             void DdnaIsReady(bool isReady, string userId);
+            void GetGeo();
+            string GetAdditionalParams();
         }
 
 #if UNITY_IOS && !TTP_DEV_MODE
@@ -644,6 +663,14 @@ namespace Tabtale.TTPlugins
 
             [DllImport("__Internal")]
             private static extern void ttpDdnaIsReady(bool isReady, string userId);
+            
+            [DllImport("__Internal")]
+            private static extern void ttpGetGeo();
+            
+            [DllImport("__Internal")]
+            private static extern string ttpGetAdditionalParams();
+            
+            
 
             public void LogEvent(long targets, string eventName, IDictionary<string, object> eventParams, bool timed, bool ttpInternal)
             {
@@ -703,6 +730,16 @@ namespace Tabtale.TTPlugins
             public void DdnaIsReady(bool isReady, string userId)
             {
                 ttpDdnaIsReady(isReady, userId);
+            }
+
+            public void GetGeo()
+            {
+                ttpGetGeo();
+            }
+
+            public string GetAdditionalParams()
+            {
+                return ttpGetAdditionalParams();
             }
         }
 #endif
@@ -833,6 +870,23 @@ namespace Tabtale.TTPlugins
                     ServiceJavaObject.Call("ddnaIsReady", isReady, userId);
                 }
             }
+
+            public void GetGeo()
+            {
+                if (ServiceJavaObject != null)
+                {
+                    ServiceJavaObject.Call("getAndSendGeoCodeAsync");
+                }
+            }
+
+            public string GetAdditionalParams()
+            {
+                if (ServiceJavaObject != null)
+                {
+                    return ServiceJavaObject.Call<string>("getAdditionalEventParamsJson");
+                }
+                return null;
+            }
         }
 #endif
         private class EditorImpl : IAnalytics
@@ -923,6 +977,19 @@ namespace Tabtale.TTPlugins
             {
                 Debug.Log("TTPAnalytics::EditorImpl::DdnaIsReady: isReady=" + isReady + " userId=" + userId);
             }
+
+            public void GetGeo()
+            {
+                if (_getGeoCallback != null)
+                {
+                    _getGeoCallback.Invoke("US");
+                }
+            }
+
+            public string GetAdditionalParams()
+            {
+                return "{\"fakeAdditionalParams\":\"howdy\"}";
+            }
         }
 
         /// <summary>
@@ -939,6 +1006,11 @@ namespace Tabtale.TTPlugins
             private class OnRemoteValueProviderReadyMessage
             {
                 public bool ready = false;
+            }
+            
+            private class OnGotGetCodeMessage
+            {
+                public string geo = "NA";
             }
 
             public void onRemoteFetchCompleted(string messageStr)
@@ -996,6 +1068,45 @@ namespace Tabtale.TTPlugins
                     {
                         _onRequestValueDictionaryResponseAction.Invoke(dictionary);
                         _onRequestValueDictionaryResponseAction = null;
+                    }
+                }
+            }
+
+            public void OnDDNALogEventCalled(string message)
+            {
+                if (message != null)
+                {
+                    var dict = TTPJson.Deserialize(message) as Dictionary<string,object>;
+                    if (dict != null)
+                    {
+                        string eventName = null;
+                        IDictionary<string, object> eventParams = null;
+                        if (dict.ContainsKey("eventName"))
+                        {
+                            eventName = dict["eventName"] as string;
+                        }
+
+                        if (dict.ContainsKey("eventParams"))
+                        {
+                            eventParams = dict["eventParams"] as Dictionary<string, object>;
+                        }
+
+                        if (eventName != null && OnDDNALogEvent != null)
+                        {
+                            OnDDNALogEvent.Invoke(eventName, eventParams);
+                        }
+                    }
+                }
+            }
+
+            public void OnGotGeoCode(string message)
+            {
+                if (message != null)
+                {
+                    var gotGetCodeMessage = JsonUtility.FromJson<OnGotGetCodeMessage>(message);
+                    if (gotGetCodeMessage != null && _getGeoCallback != null)
+                    {
+                        _getGeoCallback.Invoke(gotGetCodeMessage.geo);
                     }
                 }
             }

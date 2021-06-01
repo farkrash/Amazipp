@@ -33,7 +33,7 @@ namespace Tabtale.TTPlugins
         private static System.Action _onContinueAction;
 
         
-        public static bool Show(string location, System.Action<TTPILRDData> onContinueAction)
+        public static bool ShowWithILRD(string location, System.Action<TTPILRDData> onContinueAction)
         {
             _onContinueActionILRD = onContinueAction;
             if(Impl != null)

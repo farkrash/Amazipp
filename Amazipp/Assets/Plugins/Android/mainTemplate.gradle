@@ -19,6 +19,9 @@ allprojects {
             dirs 'libs'
         }
         maven {
+            url 'https://s3.amazonaws.com/com.tabtale.repo/android/maven/backup'
+        }
+        maven {
             url 'https://s3.amazonaws.com/com.tabtale.repo/android/maven/ttplugins'
         }
         maven {
@@ -41,6 +44,7 @@ allprojects {
         maven {
             url  "https://dl.bintray.com/mintegral-official/mintegral_ad_sdk_android_for_oversea"
         }
+        maven { url 'https://fyber.bintray.com/marketplace' }
     }
 }
 
@@ -103,13 +107,13 @@ consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
     buildTypes {
         debug {
             minifyEnabled **MINIFY_DEBUG**
-            useProguard **PROGUARD_DEBUG**
+            
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD**
             jniDebuggable true
         }
         release {
             minifyEnabled **MINIFY_RELEASE**
-            useProguard **PROGUARD_RELEASE**
+            
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD****SIGNCONFIG**
         }
     }**PACKAGING_OPTIONS**

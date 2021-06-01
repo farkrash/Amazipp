@@ -1,4 +1,4 @@
-﻿
+
 
 using System;
 using System.Collections;
@@ -13,6 +13,7 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.iOS.Xcode;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 // ReSharper disable InconsistentNaming
 
@@ -35,6 +36,21 @@ public class CLIKConfiguration : EditorWindow
         public const string CONFIG_FN_RV_INTER = "rewardedInterstitials";
         public const string CONFIG_FN_RATEUS = "rateUs";
         public const string CONFIG_FN_OPENADS = "openads";
+        
+        
+        public const string PACAKAGES_ANALYTICS = "analytics";
+        public const string PACAKAGES_APPSFLYER = "appsFlyer";
+        public const string PACAKAGES_BANNERS = "banners";
+        public const string PACAKAGES_CRASHTOOL = "crashMonitoringTool";
+        public const string PACAKAGES_ELEPHANT = "elephant";
+        public const string PACAKAGES_GLOBAL = "global";
+        public const string PACAKAGES_INTERSTITIALS = "interstitials";
+        public const string PACAKAGES_POPUPSMGR = "popupsMgr";
+        public const string PACAKAGES_PRIVACY_SETTINGS = "privacySettings";
+        public const string PACAKAGES_RV = "rewardedAds";
+        public const string PACAKAGES_RV_INTER = "rewardedInterstitials";
+        public const string PACAKAGES_RATEUS = "rateUs";
+        public const string PACAKAGES_OPENADS = "openads";
 
         public const string CONFIG_KEY_INCLUDED = "included";
         
@@ -113,7 +129,7 @@ public class CLIKConfiguration : EditorWindow
 
         public const string PLAYER_PREFS_KEY_FIRST_CONFIGURATION = "CLIK-firstTimeConfiguration";
 
-
+        
     }
    
     [MenuItem("CLIK/Configure...")]
@@ -137,9 +153,24 @@ public class CLIKConfiguration : EditorWindow
 
         // Get existing open window or if none, make a new one:
         var window = GetWindow<CLIKConfiguration>(true, "CLIK Configuration");
+        window.minSize = new Vector2(600f, 600f);
         window.Show();
     }
-    
+
+    private static bool IsUnityPurchasingEnabled()
+    {
+#if UNITY_PURCHASING
+        return true;
+#endif
+        return false;
+    }
+
+    string newInAppId = "";
+    string newInAppIapId = "";
+    int newInAppType = 0;
+    bool newInAppNoAds = false;
+    bool showInAppsSection = false;
+
     private void OnGUI()
     {
         EditorGUILayout.Space();
@@ -181,10 +212,9 @@ public class CLIKConfiguration : EditorWindow
         IndicateConfiguration("Open Ads", _configuration.globalConfig.IsValid() && _configuration.openAdsConfig.IsValid(), _configuration.openAdsConfig.included);
         IndicateConfiguration("Rate Us", true, _configuration.rateUsConfig.included);
         IndicateConfiguration("Privacy Settings", true, _configuration.privacySettingsConfig.included);
-        
+
         GUILayout.FlexibleSpace();
-        
-        
+
         if (GUILayout.Button("Load Configuration"))
         {
             UnzipAnLoadConfiguration();
@@ -195,8 +225,14 @@ public class CLIKConfiguration : EditorWindow
         }
         GUILayout.Space(10);
     }
-    
-    
+
+    private void GuiLine(int i_height = 1)
+    {
+        Rect rect = EditorGUILayout.GetControlRect(false, i_height);
+        rect.height = i_height;
+        EditorGUI.DrawRect(rect, new Color(0.5f, 0.5f, 0.5f, 1));
+    }
+
     private interface IConfig
     {
         Dictionary<string, object> ToDict();
@@ -784,7 +820,7 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-
+    
     [Serializable]
     private class RewardedInterConfig : IConfig
     {
@@ -819,7 +855,7 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-
+    
     private class PlatformConfiguration
     {
         public AppsflyerConfig appsflyerConfig = new AppsflyerConfig();
@@ -874,6 +910,7 @@ public class CLIKConfiguration : EditorWindow
         private void SaveConfigurationToFile(IConfig config)
         {
             var json = TTPJson.Serialize(config.ToDict());
+            Debug.Log("SaveConfigurationToFile:json=" + json);
             var fp = Path.Combine(Constants.CONFIG_FILE_PATH, config.GetServiceName() + ".json");
             if (File.Exists(fp))
             {
@@ -966,8 +1003,13 @@ public class CLIKConfiguration : EditorWindow
         _greenIndicator.fixedHeight = 25;
         _greenIndicator.padding.right = 10;
         _greenIndicator.padding.top = 5;
+        _minusIcon.fixedHeight = 25;
+        _minusIcon.alignment = TextAnchor.MiddleRight;
+        _minusIcon.padding.right = 10;
+        _minusIcon.padding.top = 5;
         _okTexture = GetTexture("Assets/Tabtale/TTPlugins/CLIK/Editor/ok.png");
         _xTexture = GetTexture("Assets/Tabtale/TTPlugins/CLIK/Editor/x.png");
+        _minusTexture = GetTexture("Assets/Tabtale/TTPlugins/CLIK/Editor/minus.png");
         _okGuiContent = new GUIContent(_okTexture, "Configured");
         _xGuiContent = new GUIContent(_xTexture, "Not Configured");
         _redLabel.normal.textColor = Color.red;
@@ -993,13 +1035,14 @@ public class CLIKConfiguration : EditorWindow
     private GUIContent _xGuiContent;
     private Texture _okTexture;
     private Texture _xTexture;
-    
-    
+    private Texture _minusTexture;
+
     GUIStyle _nonbreakingLabelStyle = new GUIStyle();
    
     private GUIStyle _redLabel = new GUIStyle();
     private GUIStyle _greenLabel = new GUIStyle();
     private GUIStyle _greenIndicator = new GUIStyle();
+    private GUIStyle _minusIcon = new GUIStyle();
 
     private static bool UnzipAnLoadConfiguration()
     {
@@ -1035,17 +1078,36 @@ public class CLIKConfiguration : EditorWindow
         {
             GUILayout.Label(_xGuiContent, _greenIndicator);
         }
-        
+
         EditorGUILayout.EndHorizontal();
     }
 
-    private static TTPIncludedServicesScriptableObject GetInclusionScriptableObject()
+    private static void ResetIncludedServices(TTPIncludedServicesScriptableObject includedServices)
+    {
+        includedServices.analytics = false;
+        includedServices.appsFlyer = false;
+        includedServices.crashTool = false;
+        includedServices.banners = false;
+        includedServices.interstitials = false;
+        includedServices.openAds = false;
+        includedServices.rvs = false;
+        includedServices.rvInter = false;
+        includedServices.privacySettings = false;
+        includedServices.rateUs = false;
+    }
+    
+    private static TTPIncludedServicesScriptableObject GetInclusionScriptableObject(bool reset = false)
     {
         var path = "Assets/Tabtale/TTPlugins/CLIK/Resources/ttpIncludedServices.asset";
         if (File.Exists(path))
         {
             Debug.Log("GetInclusionScriptableObject ::  1");
-            return AssetDatabase.LoadAssetAtPath<TTPIncludedServicesScriptableObject>("Assets/Tabtale/TTPlugins/CLIK/Resources/ttpIncludedServices.asset");
+            var includedServices = AssetDatabase.LoadAssetAtPath<TTPIncludedServicesScriptableObject>("Assets/Tabtale/TTPlugins/CLIK/Resources/ttpIncludedServices.asset");
+            if (reset)
+            {
+                ResetIncludedServices(includedServices);
+            }
+            return includedServices;
         }
         else
         {
@@ -1117,8 +1179,65 @@ public class CLIKConfiguration : EditorWindow
         
     }
 
-    
-    
+    public static void BuilderDetermineIncludedServices()
+    {
+        var isAndroid = EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android;
+        var store = isAndroid ? "google" : "apple";
+        var bundleId = PlayerSettings.GetApplicationIdentifier(isAndroid ? BuildTargetGroup.Android : BuildTargetGroup.iOS);
+        var url = "http://dashboard.ttpsdk.info/clik-packages/" + store + "/" + bundleId;
+        string resStr = null;
+        if (TTPEditorUtils.DownloadStringToFile(url, "Assets/StreamingAssets/clik-packages.json", out resStr))
+        {
+            if (!string.IsNullOrEmpty(resStr))
+            {
+                var includedServices = GetInclusionScriptableObject(true);
+                if (TTPJson.Deserialize(resStr) is List<object> serviceList)
+                {
+                    foreach (var serviceName in serviceList)
+                    {
+                        if (serviceName is string serviceStr)
+                        {
+                            switch (serviceStr)
+                            {
+                                case Constants.PACAKAGES_APPSFLYER:
+                                    includedServices.appsFlyer = true;
+                                    break;
+                                case Constants.PACAKAGES_ANALYTICS:
+                                    includedServices.analytics = true;
+                                    break;
+                                case Constants.PACAKAGES_CRASHTOOL:
+                                    includedServices.crashTool = true;
+                                    break;
+                                case Constants.PACAKAGES_BANNERS:
+                                    includedServices.banners = true;
+                                    break;
+                                case Constants.PACAKAGES_RV_INTER:
+                                    includedServices.rvInter = true;
+                                    break;
+                                case Constants.PACAKAGES_OPENADS:
+                                    includedServices.openAds = true;
+                                    break;
+                                case Constants.PACAKAGES_RV:
+                                    includedServices.rvs = true;
+                                    break;
+                                case Constants.PACAKAGES_INTERSTITIALS:
+                                    includedServices.interstitials = true;
+                                    break;
+                                case Constants.PACAKAGES_PRIVACY_SETTINGS:
+                                    includedServices.privacySettings = true;
+                                    break;
+                                case Constants.PACAKAGES_RATEUS:
+                                    includedServices.rateUs = true;
+                                    break;
+                            }
+                        }
+                    }
+                    SaveInclusionScriptableObject(includedServices);
+                }
+            }
+        }
+    }
+
     private class AndroidGradlePreprocess : IPostGenerateGradleAndroidProject
     {
         public int callbackOrder { get { return 0; } }
@@ -1165,7 +1284,8 @@ public class CLIKConfiguration : EditorWindow
             
             var exclusionsList = new List<string>
             {
-                "TT_Plugins_Billing",
+                "TT_Plugins_Banners_Mopub",
+                "TT_Plugins_Banners_MoPub",
                 "TT_Plugins_CrossDevicePersistency",
                 "TT_Plugins_CrossPromotion",
                 "TT_Plugins_DeltaDnaAgent",
@@ -1245,6 +1365,7 @@ public class CLIKConfiguration : EditorWindow
             {
                 exclusionsList.Add("TT_Plugins_Privacy_Settings");
             }
+            
             if (!includedServices.openAds && !includedServices.interstitials && !includedServices.rvs && !includedServices.banners)
             {
                 exclusionsList.Add("TT_Plugins_ECPM");
@@ -1385,7 +1506,6 @@ public class CLIKConfiguration : EditorWindow
                 services.Add("TT_Plugins_Remote_Config");
                 
             }
-            
             var json = File.ReadAllText("Assets/Tabtale/TTPlugins/TT_Plugins.json");
             if (json != null)
             {

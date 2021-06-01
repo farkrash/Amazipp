@@ -120,7 +120,7 @@ namespace Tabtale.TTPlugins {
                     }
                     else
                     {
-                        Debug.LogError("TTPCore::Setup: Couldn't find " + clsName);
+                        Debug.Log("TTPCore::Setup: Couldn't find " + clsName);
                     }
                 }
                 TTPluginsGameObject.AddComponent(typeof(CoreDelegate));

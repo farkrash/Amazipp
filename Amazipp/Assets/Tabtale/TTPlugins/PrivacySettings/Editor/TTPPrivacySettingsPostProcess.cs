@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using Tabtale.TTPlugins;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -7,7 +9,7 @@ using UnityEngine;
 
 public class TTPPrivacySettingsPostProcess
 {
-    // [PostProcessBuild(40006)]
+    [PostProcessBuild(40006)]
     public static void OnPostProcessBuild(BuildTarget target, string path)
     {
         Debug.Log("TTPPrivacySettingsPostProcess::OnPostprocessBuild");
@@ -25,6 +27,25 @@ public class TTPPrivacySettingsPostProcess
             }
         }
 #endif
+        string attText = null;
+        var additionalConfigPath =
+            "Assets/StreamingAssets/ttp/configurations/additionalConfig.json";
+        if (File.Exists(additionalConfigPath))
+        {
+            var json = File.ReadAllText(additionalConfigPath);
+            if (!string.IsNullOrEmpty(json))
+            {
+                var dic = TTPJson.Deserialize(json) as Dictionary<string, object>;
+                if (dic != null)
+                {
+                    if (dic.ContainsKey("attText") && dic["attText"] is string)
+                    {
+                        attText = dic["attText"] as string;
+                    }
+                }
+            }
+        }
+        
         var pbxProjectPath = UnityEditor.iOS.Xcode.PBXProject.GetPBXProjectPath(path);
         var pbxProject = new UnityEditor.iOS.Xcode.PBXProject();
         pbxProject.ReadFromString(System.IO.File.ReadAllText(pbxProjectPath));
@@ -32,10 +53,8 @@ public class TTPPrivacySettingsPostProcess
         var plist = new PlistDocument();
         plist.ReadFromFile(plistPath);
         var rootDict = plist.root;
-        rootDict.SetString("NSUserTrackingUsageDescription", "If you agree our partners will use your data to show you relevant ads.\n" +
-                                                             "To learn how we use data: https://crazylabs.com/app.\n" +
-                                                             "Our partners who rely on your consent: https://crazylabs.com/3rdp.\n" +
-                                                             "You can change your selection any time in the Limit Ad Tracking settings on your device.");
+        
+        rootDict.SetString("NSUserTrackingUsageDescription", attText ?? "By pressing \"Allow\" we will be able to provide you personalized ads.");
 
         File.WriteAllText(plistPath, plist.WriteToString());
     }

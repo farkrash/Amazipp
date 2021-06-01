@@ -1,4 +1,4 @@
-﻿#if UNITY_IOS
+#if UNITY_IOS
 using UnityEngine;
 using UnityEditor;
 using System.IO;
@@ -197,7 +197,33 @@ namespace Tabtale.TTPlugins
             array.AddDict().SetString("SKAdNetworkIdentifier","yrqqpx2mcb.skadnetwork");
             array.AddDict().SetString("SKAdNetworkIdentifier","52fl2v3hgk.skadnetwork");
             
-            
+            array.AddDict().SetString("SKAdNetworkIdentifier","424mk524lk.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","n6fk4nfna4.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","2fnua5tdw4.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","k674qkevps.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","y2ed4ez56y.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","6g9af3uyq4.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","rx5hdcabgc.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","g28c52eehv.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","9nlqeag3gk.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","275upjj5gd.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","e5fvkxwrpn.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","zq492l623r.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","hjevpa356n.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","3qcr597p9d.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","feyaarzu9v.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","4w7y6s5ca2.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","dzg6xy7pwj.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","y45688jllp.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","hdw39hrw9y.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","5tjdwbrq8w.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","x44k69ngh6.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","pwa73g5rt2.skadnetwork");
+
+            array.AddDict().SetString("SKAdNetworkIdentifier","r26jy69rpl.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","f7s53z58qe.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","252b5q8x7y.skadnetwork");
+            array.AddDict().SetString("SKAdNetworkIdentifier","32z4fx6l9h.skadnetwork");
             
             
             // fix problem with statusbar on iOS 14

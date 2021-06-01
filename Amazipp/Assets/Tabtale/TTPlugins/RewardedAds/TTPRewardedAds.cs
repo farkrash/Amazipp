@@ -40,7 +40,7 @@ namespace Tabtale.TTPlugins
         /// <param name="location">Location for showing</param>
         /// <param name="onResultAction">Action delegate for result</param>
         /// <returns>True - if plugin is implemented</returns>
-        public static bool Show(string location, System.Action<bool, TTPILRDData> onResultAction)
+        public static bool ShowWithILRD(string location, System.Action<bool, TTPILRDData> onResultAction)
         {
             _onResultActionILRD = onResultAction;
             _onResultAction = null;

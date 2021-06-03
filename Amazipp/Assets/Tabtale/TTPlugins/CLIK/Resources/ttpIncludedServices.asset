@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appsFlyer: 1
   analytics: 1
-  banners: 1
-  interstitials: 1
-  rvs: 1
+  banners: 0
+  interstitials: 0
+  rvs: 0
   crashTool: 1
-  privacySettings: 1
-  rateUs: 1
-  openAds: 1
-  rvInter: 1
+  privacySettings: 0
+  rateUs: 0
+  openAds: 0
+  rvInter: 0

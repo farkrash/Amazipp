@@ -1,0 +1,12 @@
+{
+  "included": true,
+  "firebase": {
+    "googleAppId": "1:35614606559:android:3b1d32816d83c82d32956a",
+    "apiKey": "AIzaSyCAVlmaSBPKXDapin2BEOv98jdYOfWoMoU",
+    "projectId": "cl-amazipp",
+    "clientId": "35614606559-4afghc1s7t9ls91famqg19drkckk0umg.apps.googleusercontent.com",
+    "senderId": "35614606559",
+    "storageBucket": "cl-amazipp.appspot.com",
+    "databaseURL": ""
+  }
+}
